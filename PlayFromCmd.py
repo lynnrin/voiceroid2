@@ -26,15 +26,6 @@ class talkVOICEROID():
                 return childElement
         return False
 
-    def __eraseTextEditorView(self, textBoxEditControl):
-        # textを消す＆終わるまで待つ
-        while True:
-            try:
-                textBoxEditControl.set_edit_text("")
-                break
-            except:
-                sleep(0.2)
-
     def __startVOICEROID2(self):
         parentUIAElement = pywinauto.uia_element_info.UIAElementInfo()
         if self.__search_child_byname("VOICEROID2", parentUIAElement) == False \
@@ -71,6 +62,15 @@ class talkVOICEROID():
         playButtonControl.click()
 
         self.__eraseTextEditorView(textBoxEditControl)
+
+    def __eraseTextEditorView(self, textBoxEditControl):
+        # textを消す＆終わるまで待つ
+        while True:
+            try:
+                textBoxEditControl.set_edit_text("")
+                break
+            except:
+                sleep(0.2)
 
 
 if __name__ == '__main__':
