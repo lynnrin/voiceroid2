@@ -5,28 +5,22 @@ from time import sleep
 
 def search_child_byclassname(class_name, uiaElementInfo, target_all = False):
     target = []
-    # 全ての子要素検索
     for childElement in uiaElementInfo.children():
-        # ClassNameの一致確認
-        if childElement.class_name == class_name:
+         if childElement.class_name == class_name:
             if target_all == False:
                 return childElement
             else:
                 target.append(childElement)
     if target_all == False:
-        # 無かったらFalse
         return False
     else:
         return target
 
 
 def search_child_byname(name, uiaElementInfo):
-    # 全ての子要素検索
     for childElement in uiaElementInfo.children():
-        # Nameの一致確認
         if childElement.name == name:
             return childElement
-    # 無かったらFalse
     return False
 
 
@@ -51,7 +45,6 @@ def startVOICEROID2():
 
 def talkVOICEROID2(speakPhrase):
     startVOICEROID2()
-    # デスクトップのエレメント
     parentUIAElement = pywinauto.uia_element_info.UIAElementInfo()
 
     voiceroid2 = search_child_byname("VOICEROID2*",parentUIAElement)
@@ -68,7 +61,6 @@ def talkVOICEROID2(speakPhrase):
     buttonsElement = search_child_byclassname("Button",TextEditViewElement,target_all = True)
     playButtonElement = ""
     for buttonElement in buttonsElement:
-        # テキストブロックを捜索
         textBlockElement = search_child_byclassname("TextBlock",buttonElement)
         if textBlockElement.name == "再生":
             playButtonElement = buttonElement
