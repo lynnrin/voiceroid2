@@ -5,10 +5,10 @@ import PlayFromCmd
 import time
 
 # API用のキー
-CUSTOMER_KEY = "YHTrWD3aQDY8VGf71xvsmixKk"
-CUSTOMER_SECRET = "I3c6QdwXLK2BfPHTDtl6QSUEZXzmH3gmV3tccenZ2dxCj4cHo2"
-ACCESS_TOKEN = "2324056879-YmJo7luSdKt8mfRo1AocdhTqKhPOoGob425nFQG"
-ACCESS_TOKEN_SECRET = "BYT7nQ3zmBuLbOrrPGKgr1VTdYvzkL2vfSHJ0jUz7jRIU"
+CUSTOMER_KEY = ""
+CUSTOMER_SECRET = ""
+ACCESS_TOKEN = ""
+ACCESS_TOKEN_SECRET = ""
 
 # 1.override StreamListener
 # StreamingListenerをオーバーライド
